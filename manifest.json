@@ -1,0 +1,19 @@
+{
+    "name": "PW Simplify",
+    "description": "Cleans up PW UI",
+    "version": "1.0",
+    "manifest_version": 3,
+ 
+    "content_scripts": [{
+        "css" : ["pwstyle.css"],
+        "js" : ["pwscript.js"],
+        "matches" : ["https://www.pivotalweather.com/*"]
+      }],
+      "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+      },
+      "permissions": [
+        "storage"
+      ]
+  }
