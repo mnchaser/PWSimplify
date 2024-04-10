@@ -1,4 +1,5 @@
 /*body {background-color: red !important; }*/
+#banner_container {display: none !important; }
 #hoverlinks {display: none !important; }
 
 [data-model="ukmet"]{display: none !important;}
