@@ -17,12 +17,17 @@ INSTALLATION
 1. Download the all of the files as Zip
 2. Unzip the folder somewhere on your hard drive
 3. Rename folder to "PWSimply"
-4. Fromt the Chrome menu, select Extensions > Manage Extensions
+4. From the Chrome menu, select Extensions > Manage Extensions
 5. On the Extensions page, ensure Developer Mode is selected in upper right
 6. Choose "Load unpacked"
 7. Select the "PWSimply" folder
 8. TADA!
 
 Now go visit PivotalWeather and see the changes!
+
+UNINSTALL
+1. From the Chrome menu, select Extensions > Manage Extensions
+2. Find "PW Simplify x.xx"
+3. Either disable via toggle OR click Remove
 
 If you have any questions or ideas, send them my way: eric@mnchaser.com
