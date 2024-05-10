@@ -2,9 +2,9 @@ Hello!
 This is a little work in progress project I'm using to fine tune some subtleties in the PivotalWeather UI.  
 
 NEW FEATURES in v1.1
--options page to turn features on/off
--Choose Models to hide in menu
--Colorize 00z steps in the grid
+1. options page to turn features on/off
+2. Choose Models to hide in menu
+3. Colorize 00z steps in the grid
 
 
 MAJOR FEATURES 
@@ -15,8 +15,7 @@ MAJOR FEATURES
 
    
 ROADMAP
-
--(idea) default page load to a certain model or Animation(e.g. Forecast Loop) <-- this can be accomplished today by bookmarking fh=loop in the querystring. Example: https://www.pivotalweather.com/model.php?m=ecmwf_full&fh=loop&pwplus=1
+1. (idea) default page load to a certain model or Animation(e.g. Forecast Loop) <-- this can be accomplished today by bookmarking fh=loop in the querystring. Example: https://www.pivotalweather.com/model.php?m=ecmwf_full&fh=loop&pwplus=1
 
 
 INSTALLATION
