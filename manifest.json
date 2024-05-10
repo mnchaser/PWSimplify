@@ -1,7 +1,7 @@
 {
     "name": "PW Simplify",
     "description": "Cleans up PW UI",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 3,
  
     "content_scripts": [{
