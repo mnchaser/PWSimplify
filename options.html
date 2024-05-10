@@ -2,17 +2,176 @@
 <html>
   <head>
     <title>PW Simplify Options</title>
+    <style>
+      .initialBlur {
+        filter:blur(200px);
+      }
+      .loaded {
+        filter:blur(0px);
+      }
+    </style>
   </head>
-  <body>
+  
+  <body id="body" class="initialBlur">
 
+    <h1>PW Simplify Settings</h1>
+    <br/>
+    <h2>Main / Navigation</h2>
     <label>
-      <input type="checkbox" id="hoverlinks" />
-      Remove Hover Links?
+      <input type="checkbox" id="showBanner" value="true" />
+      Show main banner
+    </label><br/>
+    <label>
+      <input type="checkbox" id="hoverTimeLinks" value="true" />
+      Show Time Steps (above slider)
+    </label><br/>
+    <label>
+      <input type="checkbox" id="fixSliderHover" value="true" />
+      Fix Time Slider Focus Bug (slider stays active - requires click away)
     </label>
 
-    <div id="status"></div>
+    <br/>
+    <br/>
+    <h2>Models (check to show)</h2>
+    <table>
+      <tr style="vertical-align: top;">
+        <td style="vertical-align: top; padding-right: 15px;">
+          <strong>Globals</strong><br/>
+          <label>
+            <input type="checkbox" id="modelShowCFS" value="true" />
+            CFS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowECMWF" value="true" />
+            ECMWF
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowECMWFAIFS" value="true" />
+            ECMWF-AIFS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowGFS" value="true" />
+            GFS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowGraphCastGFS" value="true" />
+            GraphCast GFS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowGDPS" value="true" />
+            GDPS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowICON" value="true" />
+            ICON
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowUkmet" value="true" />
+            Ukmet
+          </label>
+        </td>
+        <td style="vertical-align: top; padding-right: 15px;">
+          <strong>Regional</strong><br/>
+          <label>
+            <input type="checkbox" id="modelShowNAM" value="true" />
+            NAM
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowRAP" value="true" />
+            RAP
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowRDPS" value="true" />
+            RDPS
+          </label>
+        </td>
+        <td style="vertical-align: top; padding-right: 15px;">
+          <strong>Convection Allowing</strong><br/>
+          <label>
+            <input type="checkbox" id="modelShowHRRR" value="true" />
+            HRRR
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowNAM3km" value="true" />
+            NAM 3km CONUS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowHRWWRFARW" value="true" />
+            HRW WRF-ARW
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowHRWWRFNSSL" value="true" />
+            HRW WRF-NSSL
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowFV3" value="true" />
+            HRW FV3
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowRRFSA" value="true" />
+            RRFS A
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowNSSLMPASHN" value="true" />
+            NSSL MPAS-HN
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowNSSLMPASHT" value="true" />
+            NSSL MPAS-HT
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowNSSLMPASRT" value="true" />
+            NSSL MPAS-RT
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowHRDPS" value="true" />
+            HRDPS
+          </label>
+        </td>
+        <td style="vertical-align: top; padding-right: 15px;">
+          <strong>Ensembles</strong><br/>
+          <label>
+            <input type="checkbox" id="modelShowCMCE" value="true" />
+            CMCE
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowEPS" value="true" />
+            EPS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowEPSOpenData" value="true" />
+            EPS-OpenData
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowGEFS" value="true" />
+            GEFS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowICONEPS" value="true" />
+            ICON-EPS
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowSREF" value="true" />
+            SREF
+          </label><br/>
+          <label>
+            <input type="checkbox" id="modelShowNWSBlend" value="true" />
+            NWS Blend of Models
+          </label><br/>
+        </td>
+      </tr>
+    </table>
+    <br/><br/>
+    <h2>Styling</h2>
+    <label>
+      <input type="checkbox" id="styleHighlight00Z" value="true" />
+      Highlight 00z Steps
+    </label><br/>
+    <br/><br/>
     <button id="save">Save</button>
-
+    <br/><br/>
+    <div id="status" style="color:green;"></div>
+    <br/>
     <script src="options.js"></script>
   </body>
 </html>
