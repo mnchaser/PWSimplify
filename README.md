@@ -14,19 +14,20 @@ MAJOR FEATURES
 4. Colorize 00z steps in the grid
 
    
-ROADMAP
-1. (idea) default page load to a certain model or Animation(e.g. Forecast Loop) <-- this can be accomplished today by bookmarking fh=loop in the querystring. Example: https://www.pivotalweather.com/model.php?m=ecmwf_full&fh=loop&pwplus=1
-
+ROADMAP/IDEAS
+1. (idea) default page load to a certain model or Animation(e.g. Forecast Loop) <-- this can be accomplished today by bookmarking &fh=loop in the querystring. Example: https://www.pivotalweather.com/model.php?m=ecmwf_full&fh=loop&pwplus=1
+2. Favorites shown in the left menu - COMING SOON!
+3. Option to keep the step numbers above the slider bar, but add a bigger space so they aren't accidentally hit
 
 INSTALLATION
 1. Download the all of the files as Zip
-2. Unzip the folder somewhere on your hard drive
+2. Unzip the folder and move it somewhere on your hard drive where it can live permanently (i.e. don't delete after you load the extension)
 3. Rename folder to "PWSimply"
 4. From the Chrome menu, select Extensions > Manage Extensions
 5. On the Extensions page, ensure Developer Mode is selected in upper right
 6. Choose "Load unpacked"
 7. Select the "PWSimply" folder
-8. TADA!
+8. Configure your options under the extension menu
 
 Now go visit PivotalWeather and see the changes!
 
