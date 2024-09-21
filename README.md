@@ -3,7 +3,7 @@ This is a little work in progress project I'm using to fine tune some subtleties
 
 ### RELEASE NOTES v1.2
 NEW FEATURES
-1. Favorites!
+1. Favorites! - The options page now allows you to save up to twelve (12) favorites.  To use, create a Group name, create a name for your favorite, then copy/paste the full URL in from your favorite configuration page.  
 
 BUG FIXES
 - none
