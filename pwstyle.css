@@ -1,2 +1,30 @@
 /*body {background-color: red !important; }*/
 
+.favorite_subgroup_label {
+    /*background-color: rgb(211,211,211);*/
+    color: rgb(34,34,34);
+    display: block;
+    font-family: Arimo;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.6p;
+    margin-left: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 2pm;
+    text-align: left;
+  }
+  .favorite_link {
+    /*background-color: rgb(211,211,211);*/
+    color: rgb(0,0,0);
+    font-family: Arimo;
+    font-size: 12px;
+    padding-left: 14px;
+    text-align: left;
+    border-bottom-color: rgb(211,211,211);
+    border-top-color: rgb(211,211,211);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-width: 1.11111px;
+    border-bottom-width: 1.11111px;
+  }

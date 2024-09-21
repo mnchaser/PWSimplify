@@ -9,168 +9,254 @@
       .loaded {
         filter:blur(0px);
       }
+       /* Container for the Favorites */
+       .favContainer {
+            display: grid;
+            grid-template-columns: 2fr 2fr; /* 1st column smaller for labels, 2nd column larger for inputs */
+            gap: 10px; /* Space between columns and rows */
+            max-width: 400px; /* Set max-width for the container */
+            margin-left: 0px;
+            margin-right: auto;
+        }
+
+        .favContainer .header {
+          font-weight: 700;
+        }
+
+        /* Styling for label elements */
+        .favContainer div {
+            display: flex;
+            align-items: center; /* Align items vertically center */
+        }
+
+        .span-two-columns {
+            grid-column: span 2; /* Makes this div span across two columns */
+        }
+
+        .favContainer hr {
+          border:none;
+          height: 2px;
+          background-color: #999;
+          margin: 10px 0;
+          width: 100%;
+        }
+        /* Styling for the input fields */
+        .favContainer input {
+            width: 100%; /* Make input take full width of its column */
+            padding: 8px;
+            box-sizing: border-box; /* Include padding and border in the input's total width */
+        }
+        .status-message {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .urlError {
+          font-size: larger;
+          color: red;
+          font-weight: bold;
+        }
     </style>
   </head>
   
   <body id="body" class="initialBlur">
 
     <h1>PW Simplify Settings</h1>
-    <br/>
-    <h2>Main / Navigation</h2>
-    <label>
-      <input type="checkbox" id="showBanner" value="true" />
-      Show main banner
-    </label><br/>
-    <label>
-      <input type="checkbox" id="hoverTimeLinks" value="true" />
-      Show Time Steps (above slider)
-    </label><br/>
-    <label>
-      <input type="checkbox" id="fixSliderHover" value="true" />
-      Fix Time Slider Focus Bug (slider stays active - requires click away)
-    </label>
+    <form id="settingsForm" novalidate>
+      <h2>Main / Navigation</h2>
+      <label>
+        <input type="checkbox" id="showBanner" value="true" />
+        Show main banner
+      </label><br/>
+      <label>
+        <input type="checkbox" id="hoverTimeLinks" value="true" />
+        Show Time Steps (above slider)
+      </label><br/>
+      <label>
+        <input type="checkbox" id="fixSliderHover" value="true" />
+        Fix Time Slider Focus Bug (slider stays active - requires click away)
+      </label>
+      <br/><br/>
+      <h2>Models (check to show)</h2>
+      <table>
+        <tr style="vertical-align: top;">
+          <td style="vertical-align: top; padding-right: 15px;">
+            <strong>Globals</strong><br/>
+            <label>
+              <input type="checkbox" id="modelShowCFS" value="true" />
+              CFS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowECMWF" value="true" />
+              ECMWF
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowECMWFAIFS" value="true" />
+              ECMWF-AIFS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowGFS" value="true" />
+              GFS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowGraphCastGFS" value="true" />
+              GraphCast GFS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowGDPS" value="true" />
+              GDPS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowICON" value="true" />
+              ICON
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowUkmet" value="true" />
+              Ukmet
+            </label>
+          </td>
+          <td style="vertical-align: top; padding-right: 15px;">
+            <strong>Regional</strong><br/>
+            <label>
+              <input type="checkbox" id="modelShowNAM" value="true" />
+              NAM
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowRAP" value="true" />
+              RAP
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowRDPS" value="true" />
+              RDPS
+            </label>
+          </td>
+          <td style="vertical-align: top; padding-right: 15px;">
+            <strong>Convection Allowing</strong><br/>
+            <label>
+              <input type="checkbox" id="modelShowHRRR" value="true" />
+              HRRR
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowNAM3km" value="true" />
+              NAM 3km CONUS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowHRWWRFARW" value="true" />
+              HRW WRF-ARW
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowHRWWRFNSSL" value="true" />
+              HRW WRF-NSSL
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowFV3" value="true" />
+              HRW FV3
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowRRFSA" value="true" />
+              RRFS A
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowNSSLMPASHN" value="true" />
+              NSSL MPAS-HN
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowNSSLMPASHT" value="true" />
+              NSSL MPAS-HT
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowNSSLMPASRT" value="true" />
+              NSSL MPAS-RT
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowHRDPS" value="true" />
+              HRDPS
+            </label>
+          </td>
+          <td style="vertical-align: top; padding-right: 15px;">
+            <strong>Ensembles</strong><br/>
+            <label>
+              <input type="checkbox" id="modelShowCMCE" value="true" />
+              CMCE
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowEPS" value="true" />
+              EPS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowEPSOpenData" value="true" />
+              EPS-OpenData
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowGEFS" value="true" />
+              GEFS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowICONEPS" value="true" />
+              ICON-EPS
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowSREF" value="true" />
+              SREF
+            </label><br/>
+            <label>
+              <input type="checkbox" id="modelShowNWSBlend" value="true" />
+              NWS Blend of Models
+            </label><br/>
+          </td>
+        </tr>
+      </table>
+      <br/>
+      <h2>Styling</h2>
+      <label>
+        <input type="checkbox" id="styleHighlight00Z" value="true" />
+        Highlight 00z Steps
+      </label><br/>
+      <br/><br/>
+      <h2>Favorites</h2>
+      <div style="font-style: italic;margin-bottom: 15px;">Note: A header is required to save a favorite for that section. If missing, favorite won't save.</div>
+      <div class="favContainer">
+        <!-- Group 1-->
+        <div class="span-two-columns"><label class="header" for="txtFavGroup1Header">Group 1</label></div>
+        <div class="span-two-columns"><input type="text" id="txtFavGroup1Header" name="txtFavGroup1Header" placeholder="ex: Group 1 Name" maxlength="36" /></div>
+        <div><input type="text" id="txtName1-1" name="txtName1-1" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav1-1" name="txtFav1-1" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName1-2" name="txtName1-2" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav1-2" name="txtFav1-2" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName1-3" name="txtName1-3" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav1-3" name="txtFav1-3" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName1-4" name="txtName1-4" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav1-4" name="txtFav1-4" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div class="span-two-columns"><hr /></div>
+        <!-- Group 2 -->
+        <div class="span-two-columns"><label class="header" for="txtFavGroup2Header">Group 2</label></div>
+        <div class="span-two-columns"><input type="text" id="txtFavGroup2Header" name="txtFavGroup2Header" placeholder="ex: Group 2 Name" maxlength="36" /></div>
+        <div><input type="text" id="txtName2-1" name="txtName2-1" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav2-1" name="txtFav2-1" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName2-2" name="txtName2-2" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav2-2" name="txtFav2-2" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName2-3" name="txtName2-3" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav2-3" name="txtFav2-3" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName2-4" name="txtName2-4" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav2-4" name="txtFav2-4" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div class="span-two-columns"><hr /></div>
 
-    <br/>
-    <br/>
-    <h2>Models (check to show)</h2>
-    <table>
-      <tr style="vertical-align: top;">
-        <td style="vertical-align: top; padding-right: 15px;">
-          <strong>Globals</strong><br/>
-          <label>
-            <input type="checkbox" id="modelShowCFS" value="true" />
-            CFS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowECMWF" value="true" />
-            ECMWF
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowECMWFAIFS" value="true" />
-            ECMWF-AIFS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowGFS" value="true" />
-            GFS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowGraphCastGFS" value="true" />
-            GraphCast GFS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowGDPS" value="true" />
-            GDPS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowICON" value="true" />
-            ICON
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowUkmet" value="true" />
-            Ukmet
-          </label>
-        </td>
-        <td style="vertical-align: top; padding-right: 15px;">
-          <strong>Regional</strong><br/>
-          <label>
-            <input type="checkbox" id="modelShowNAM" value="true" />
-            NAM
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowRAP" value="true" />
-            RAP
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowRDPS" value="true" />
-            RDPS
-          </label>
-        </td>
-        <td style="vertical-align: top; padding-right: 15px;">
-          <strong>Convection Allowing</strong><br/>
-          <label>
-            <input type="checkbox" id="modelShowHRRR" value="true" />
-            HRRR
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowNAM3km" value="true" />
-            NAM 3km CONUS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowHRWWRFARW" value="true" />
-            HRW WRF-ARW
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowHRWWRFNSSL" value="true" />
-            HRW WRF-NSSL
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowFV3" value="true" />
-            HRW FV3
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowRRFSA" value="true" />
-            RRFS A
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowNSSLMPASHN" value="true" />
-            NSSL MPAS-HN
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowNSSLMPASHT" value="true" />
-            NSSL MPAS-HT
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowNSSLMPASRT" value="true" />
-            NSSL MPAS-RT
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowHRDPS" value="true" />
-            HRDPS
-          </label>
-        </td>
-        <td style="vertical-align: top; padding-right: 15px;">
-          <strong>Ensembles</strong><br/>
-          <label>
-            <input type="checkbox" id="modelShowCMCE" value="true" />
-            CMCE
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowEPS" value="true" />
-            EPS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowEPSOpenData" value="true" />
-            EPS-OpenData
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowGEFS" value="true" />
-            GEFS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowICONEPS" value="true" />
-            ICON-EPS
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowSREF" value="true" />
-            SREF
-          </label><br/>
-          <label>
-            <input type="checkbox" id="modelShowNWSBlend" value="true" />
-            NWS Blend of Models
-          </label><br/>
-        </td>
-      </tr>
-    </table>
-    <br/><br/>
-    <h2>Styling</h2>
-    <label>
-      <input type="checkbox" id="styleHighlight00Z" value="true" />
-      Highlight 00z Steps
-    </label><br/>
-    <br/><br/>
-    <button id="save">Save</button>
-    <br/><br/>
-    <div id="status" style="color:green;"></div>
+        <!-- Group 3 -->
+        <div class="span-two-columns"><label class="header" for="txtFavGroup3Header">Group 3</label></div>
+        <div class="span-two-columns"><input type="text" id="txtFavGroup3Header" name="txtFavGroup3Header" placeholder="ex: Group 3 Name" maxlength="36" /></div>
+        <div><input type="text" id="txtName3-1" name="txtName3-1" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav3-1" name="txtFav3-1" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName3-2" name="txtName3-2" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav3-2" name="txtFav3-2" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName3-3" name="txtName3-3" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav3-3" name="txtFav3-3" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+        <div><input type="text" id="txtName3-4" name="txtName3-4" placeholder="ex: My Fav Name" maxlength="36" /></div>
+        <div><input type="url" id="txtFav3-4" name="txtFav3-4" placeholder="https://www.pivotalweather.com/model.php/m=gfs" maxlength="200" />&nbsp;<span class="urlError" style="display: none;">*</span></div>
+      </div>
+      <br/>
+      <br/><br/>
+      <input type="submit" value="Save"/>
+    </form>
+    <div id="status" class="status-message"></div>
     <br/>
     <script src="options.js"></script>
   </body>
