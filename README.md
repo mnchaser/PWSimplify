@@ -1,7 +1,8 @@
 Hello!  
 This is a little work in progress project I'm using to fine tune some subtleties in the PivotalWeather UI.  
 
-NEW FEATURES in v1.2
+### RELEASE NOTES v1.2
+NEW FEATURES
 1. Favorites!
 
 BUG FIXES
@@ -15,12 +16,16 @@ MAJOR FEATURES
 5. Options page to turn features on/off
 
    
-ROADMAP/IDEAS
-https://github.com/mnchaser/PWSimplify/labels/enhancement
+### ROADMAP/IDEAS
+https://github.com/mnchaser/PWSimplify/labels/idea
 1. (idea) default page load to a certain model or Animation(e.g. Forecast Loop) <-- this can be accomplished today by bookmarking &fh=loop in the querystring. Example: https://www.pivotalweather.com/model.php?m=ecmwf_full&fh=loop&pwplus=1
 3. Option to keep the step numbers above the slider bar, but add a bigger space so they aren't accidentally hit
 
-INSTALLATION
+### BUGS
+If you have any problems, please log an issue (bug) here: https://github.com/mnchaser/PWSimplify/labels/bug
+
+
+### INSTALLATION
 1. Download the all of the files as Zip
 2. Unzip the folder and move it somewhere on your hard drive where it can live permanently (i.e. don't delete after you load the extension)
 3. Confirm/Name folder to "PWSimply"
@@ -35,9 +40,9 @@ Now go visit PivotalWeather and see the changes!
 CONFIGURE OPTIONS
 Click the three dots next to PW Simplify and choose Options. (to view extensions that aren't pinned, click the puzzle icon in upper left)  
 
-UNINSTALL
+### UNINSTALL
 1. From the Chrome menu, select Extensions > Manage Extensions
 2. Find "PW Simplify x.xx"
 3. Either disable via toggle OR click Remove
 
-If you have any questions or ideas, send them my way: eric@mnchaser.com
+Thanks!
