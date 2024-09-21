@@ -17,12 +17,11 @@ MAJOR FEATURES
 
    
 ### ROADMAP/IDEAS
-https://github.com/mnchaser/PWSimplify/labels/idea
-1. (idea) default page load to a certain model or Animation(e.g. Forecast Loop) <-- this can be accomplished today by bookmarking &fh=loop in the querystring. Example: https://www.pivotalweather.com/model.php?m=ecmwf_full&fh=loop&pwplus=1
-3. Option to keep the step numbers above the slider bar, but add a bigger space so they aren't accidentally hit
+Ideas/Features requests are tracked under "Issues" tab with tag: https://github.com/mnchaser/PWSimplify/labels/idea
+
 
 ### BUGS
-If you have any problems, please log an issue (bug) here: https://github.com/mnchaser/PWSimplify/labels/bug
+Bugs are tracked under "Issues" tab with tag: https://github.com/mnchaser/PWSimplify/labels/bug
 
 
 ### INSTALLATION
