@@ -253,9 +253,7 @@ try {
                     "cell_link parameter_link favorite_link";
                   fav_link1_1.setAttribute(
                     "href",
-                    group.favorite1
-                      .toLowerCase()
-                      .replace("https://www.pivotalweather.com", "")
+                    cleanURL(group.favorite1, "rh")
                   );
                   fav_link1_1.textContent = group.name1;
                   fav_link1_1.setAttribute("target", "_self");
@@ -278,9 +276,7 @@ try {
                     "cell_link parameter_link favorite_link";
                   fav_link1_2.setAttribute(
                     "href",
-                    group.favorite2
-                      .toLowerCase()
-                      .replace("https://www.pivotalweather.com", "")
+                    cleanURL(group.favorite2, "rh")
                   );
                   fav_link1_2.textContent = group.name2;
                   fav_link1_2.setAttribute("target", "_self");
@@ -302,9 +298,7 @@ try {
                     "cell_link parameter_link favorite_link";
                   fav_link1_3.setAttribute(
                     "href",
-                    group.favorite3
-                      .toLowerCase()
-                      .replace("https://www.pivotalweather.com", "")
+                    cleanURL(group.favorite3, "rh")
                   );
                   fav_link1_3.textContent = group.name3;
                   fav_link1_3.setAttribute("target", "_self");
@@ -326,9 +320,7 @@ try {
                     "cell_link parameter_link favorite_link";
                   fav_link1_4.setAttribute(
                     "href",
-                    group.favorite4
-                      .toLowerCase()
-                      .replace("https://www.pivotalweather.com", "")
+                    cleanURL(group.favorite4, "rh")
                   );
                   fav_link1_4.textContent = group.name4;
                   fav_link1_4.setAttribute("target", "_self");
@@ -370,4 +362,21 @@ try {
   });
 } catch (error) {
   alert("Oh Hail no! Sorry I ran into an issue: " + error);
+}
+
+function cleanURL(url, param) {
+  // Create a URL object from the given string
+  let urlObj = new URL(url);
+
+  // Use the URLSearchParams object to get the query parameters
+  let params = urlObj.searchParams;
+
+  // Delete the specified query parameter (e.g., "rh")
+  params.delete(param);
+
+  // Return the updated URL without the specified query parameter
+  return urlObj
+    .toString()
+    .toLowerCase()
+    .replace("https://www.pivotalweather.com", "");
 }
